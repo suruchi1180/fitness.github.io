@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="reg.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--FONTS AND ANIMATION-->
+        <link href="https://fonts.googleapis.com/ css?family=Josefin+Sans&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    </head>
+    <body>
+    <title>form</title>
+</head>
+<body>
+    <header>
+        <!--topbar-->
+    
+    
+        <div class="top-bar">
+          <div class="container3">
+            <div class="col-12 text-center">
+              <p><a href="tel:18897887766">Contact Us: +440 1234 656 765</i></a></p>
+            </div>
+            
+          </div>
+        </div>
+        <!--navbar-->
+        <nav>
+          <div class="logo">Fit4Fitness</div>
+          <ul>
+            <li><a href="file:///C:/Users/User/Desktop/final%20project/index.html">Home</a></li>
+            <li><a href="#">Classes</a>
+            <ul>
+              <li><a href="#">Yoga</a></li>
+              <li><a href="#">Aerobics</a></li>
+              <li><a href="#">Cardio</a></li>
+              <li><a href="#">Jumba </a></li>
+            </ul>
+            </li>
+            <li>
+              <a href="#">Services</a>
+              <ul>
+                <li><a href="#">Online</a></li>
+                <li><a href="#">Offline</a></li>
+                <li>
+                  <a href="#">More
+                    <span class="fa fa-plus"></span>
+                  </a>
+                  <ul>
+                <li><a href="#">Nutrition</a></li>
+                <li><a href="#">Wheight Lifting</a></li>
+                <li><a href="#">Crossfit</a></li>
+                </ul>
+                </li>
+              </ul>
+            </li>
+          <li><a href="Read.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </nav>
+    <!-----form-->
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+
+            </div>
+        <div class="social-icons">
+            <img src="images/fb.png">
+            <img src="images/tw.png">
+            <img src="images/gp.png">
+        </div>
+        <form id="login" class="input-grp">
+            <input type="text" class="input-field" placeholder="User Id" required>
+            <input type="password" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn">Log in</button>
+
+        </form>
+        <form id="register" class="input-grp">
+            <input type="text" class="input-field" placeholder="User Id" required>
+            <input type="email" class="input-field" placeholder="Email Id" required>
+            <input type="password" class="input-field" placeholder="Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+            <button type="submit" class="submit-btn">Register</button>
+
+        </form>
+        </div>
+    </div>
+    </header>
+   <script>
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("btn");
+
+         function register(){
+             x.style.left="-400px";
+             y.style.left="50px";
+             z.style.left="110px";
+         }
+         function login(){
+             x.style.left="50px";
+             y.style.left="450px";
+             z.style.left="0px";
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+body{
+    
+    overflow-x: hidden;
+    font-size:1rem;
+	 line-height: 1.6;
+	 background-color:white;
+	 color:black;
+     font-family: "Poppins", Arial, sans-serif;
+     display: flex;
+     text-align: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 120%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;  
+    /*margin: 1em;*/
+    color:black;
+}
+/************topbar********************/
+.top-bar{
+    background:#f4a460;
+    height: 2.5rem;
+    padding: .3rem 0;
+
+}
+.top-bar a{
+    color:black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/************slider**********/
+.home{
+    height:80vh;
+    overflow: hidden;
+    position: relative;
+    
+
+}
+.home .slide{
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    z-index:1;
+    display: none;
+    padding:0 15px;
+    animation:slide  2s ease;
+    
+	
+
+}
+.home .slide.active{
+    display: flex;
+}
+@keyframes slide{
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+
+        transform: scale(1);
+    }
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+    flex-grow: 1;
+}
+.home .container{
+    flex-grow: 1;
+}
+.home .caption{
+    width: 50%;
+
+}
+.home .caption h1{
+    font-size: 32px;
+    color:black;
+    margin:0;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+
+}
+.home .slide.active .caption h1{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.home .caption a{
+    display: inline-block;
+    padding: 10px 30px;
+    margin:25px 0 15px;
+    background:black;
+    color:white;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+}
+.home .caption a:hover{
+    background: #fff;
+    color:#000;
+}
+.home .slide.active .caption a{
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.2s;
+}
+@keyframes captionText{
+    0%{
+        opacity: o;transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;transform: translateX(0px);
+    }
+}
+/******controls*****/
+
+.home .controls .prev,
+.home .controls .next{
+    position: absolute;
+    z-index:2;
+    top: 50%;
+    height:30px;
+    width:40px;
+    margin-top: -20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 9px;
+    font-size:40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition:all .5s ease;
+    background:transparent;
+
+
+}
+.home .controls .prev:hover,
+.home .controls .next:hover{
+    color: #000;
+    transform: scale(1.1);
+
+}
+.home .controls .prev{
+    left: 0;
+}
+.home .controls .next{
+    right: 0;
+}
+.home .indicator{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 2;
+
+}
+.home .indicator div{
+    display: inline-block;
+    width: 15;
+    height: 15px;
+    color: #ffffff;
+    background-color:grey;
+    border-radius:50%;
+    text-align: center;
+    line-height: 25px;
+    margin: 0 3px;
+    transform: translateX(-50%);
+}
+.home .indicator div.active{
+    background-color: #000;
+}
+@media(max-width:767px){
+    .controls{
+        display: none;
+    }
+}
+
+
+
+/******************navbar*********************/
+nav{
+     background-color: #1b1b1b;
+    }
+    nav:after{
+        content:'';
+        clear:both;
+        display: table;
+    }
+    nav .logo{
+        margin-left: 1em;
+         float: left;
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 70px;
+        padding-left: 60px;
+        color: sandybrown;
+        
+        
+    }
+    nav ul{
+        float:right;
+        list-style: none;
+        margin-right: 40px;
+        position: relative;
+        list-style: none;
+    z-index: 2;
+    text-align: center;
+    }
+    nav ul li{
+        float:left;
+        display:inline-block;
+        background:#1b1b1b;
+        margin:0 5px ;
+        
+    }
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        line-height: 70px;
+        font-size: 18px;
+        padding: 8px 15px;
+
+    }
+    nav ul li a:hover{
+        color:  sandybrown;
+        border-radius: 5px;
+        box-shadow: 0 0 5px  sandybrown,0 0 5px  sandybrown;
+    }
+    nav ul ul li a:hover{
+        color:  sandybrown;
+        box-shadow: none;
+
+    }
+    nav ul ul{
+        position: absolute;
+        top: 90px;
+        border-top:3px solid  sandybrown;
+        opacity: 0;
+        visibility: hidden;
+        transition: top .3s;
+        
+    }
+    nav ul ul ul{
+        border-top:none;
+    }
+    nav ul li:hover >ul{
+        top: 70px;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul li{
+        position: relative;
+        margin: 0px;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+
+    }
+    nav ul ul li a{
+        line-height: 50px;
+    }
+    nav ul ul ul li{
+        position: relative;
+        top: -70px;
+        left: 150px;
+    }
+    span .fa-plus{
+        margin-left: 40px;
+        font-size: 15px;
+    }
+    /************jumbotron*************/
+    .jumbotron .lead{ color:grey;font-weight:bold;}
+    
+   /****************icons*************************/
+   .main-point .card1{text-align: center;border: none;}
+   .main-point .card1 i{color: sandybrown; font-size: 30px;}
+   .main-point .card1 h4{color: black;font-weight: bold;}
+   .main-point .card1 p{color:black; font-size: 14px;}
+
+/************************* about us***********************************/
+.heading{
+    color: black;
+    font-weight: bold;
+    font-size: 35px;
+}
+.underline{width: 200px; margin: 0 auto; height: 5px; background-color: sandybrown;}
+
+.underline-white{
+    width: 200px;
+   /* margin: 0 auto;*/
+    height: 5px;
+    background-color: sandybrown;
+}
+.container a{
+    display: inline-block;
+    padding: 10px 30px;
+    margin:25px 0 15px;
+    background:black;
+    color:white;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+}
+.container a:hover{
+    background:sandybrown;
+    color:#000;
+}
+/**************achievments****************************/
+
+.achivement{
+    margin-top:60px;
+    margin-bottom: 40px;
+    padding-bottom: 80px;
+    padding-top: 80px;
+    background-image: url('images/back.png');
+    background-attachment: fixed;
+    background-size: cover;
+    color: aliceblue;
+
+}
+.achivement .card{
+    margin-top: 20px;
+    text-align: center;
+    color: sandybrown;
+    background-color: transparent;
+    font-weight: 500;
+}
+.achivement .card i{font-size: 40px;}
+
+
+
+
+/************************TRAINER*********************/
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+}
+.btn-outline-secondary {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+  }
+  .btn-outline-secondary:hover{
+    color:  sandybrown;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px  sandybrown,0 0 5px  sandybrown;
+  }
+  .card:hover{
+      cursor: pointer;
+      box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  }
+
+
+/********************************carousal*************************************/
+.underline1{width: 400px; margin: 0 auto; height: 5px; background-color: sandybrown;}
+
+.container2{
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4em;
+    
+    
+    
+  
+  }
+  .container-fluid{
+    margin: 0;
+    padding: 0;
+  }
+  .carousel-item{
+    padding: 100px;
+    background-image: url('images/back.png');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .carousel-item .img-box{
+    width: 135px;
+    height: 130px;
+  }
+  .carousel-indicators{
+    bottom: 40px;
+  }
+  
+
+
+
+
+
+/***************************************footer******************************************************/
+
+.footer {
+    width: 100%;
+    background:#f2f3f5;
+    display: block;
+    text-align: center;
+}
+.inner-footer{
+    width: 95%;
+    margin: auto;
+    padding: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+
+}
+.footer-items{
+    width: 25%;
+    padding: 10px 20px;
+    /*box-sizing: border-box;*/
+    text-align: center;
+
+}
+ .footer-items h1{
+    padding: 10px 0;
+    font-size: 20px;
+    color: black;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+}
+
+.footer-items p{
+    color:#727375;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 25px ;
+    text-align: center;
+    font-weight: bold;
+}
+.n1{
+    margin: 10px 0;
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+    border-bottom: tomato;
+}
+
+ .footer-items ul{
+    list-style: none;
+    color:#727375;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+ul a{
+    text-decoration: none;
+    outline: none;
+    color:#727375;
+    transition: 0.3s;
+    text-align: center;
+
+}
+ul a:hover{
+    color: yellow;
+}
+.footer-items ul li{
+    margin: 10px 0;
+    height: 25px;
+    text-align: center;
+}
+.footer-items li i{
+    margin-right: 10px ;
+    text-align: center;
+    
+}
+.social-media{
+    width: 100%;
+    color:red;
+    text-align: center ;
+    font-weight: bold;
+    
+
+
+}
+.social-media a{
+    text-decoration: none;
+    
+}
+.social-media i{
+    height: 15px;
+    width: 15px;
+    margin: 10px 5px;
+    padding: 10px;
+    color:black;
+   /* border-radius: 50%;*/
+   transition: 0.3s ease;
+    
+
+}
+.social-media i:hover{
+    color: grey;
+}
+.footer-bottom{
+    padding: 10px;
+    background:black;
+    color:#fff;
+    font-size: 12px;
+
+}
+
+@media screen and (max-width: 1085px)
+{
+    .footer-items{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px)
+{
+    .footer-items{
+        width: 100%;
+    }
+}
+
+
+
+
+
+

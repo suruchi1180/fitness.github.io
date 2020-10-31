@@ -1,0 +1,161 @@
+
+#form_container
+{
+	padding:15px 15px;
+	margin-top:15px;
+	background: rgba(0,0,0,0.5);	
+	color:#fff;
+}
+
+
+body{
+    
+    overflow-x: hidden;
+   /* font-size:1rem;*/
+	 line-height: 1.6;
+	 background-color:white;
+	 color:black;
+     font-family: "Poppins", Arial, sans-serif;
+     display: flex;
+     text-align: center;
+     background-image: url("images/back.png");
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 120%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:cover;  
+    /*margin: 1em;*/
+    color:black;
+}
+
+
+/************topbar********************/
+.top-bar{
+    background:#f4a460;
+    height: 2.5rem;
+    padding: .3rem 0;
+
+}
+.top-bar a{
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/******************navbar*********************/
+nav{
+    background-color: #1b1b1b;
+   }
+   nav:after{
+       content:'';
+       clear:both;
+       display: table;
+   }
+   nav .logo{
+       margin-left: 1em;
+        float: left;
+       font-size: 27px;
+       font-weight: 700;
+       line-height: 70px;
+       padding-left: 60px;
+       color: sandybrown;
+       
+       
+   }
+   nav ul{
+       float:right;
+       list-style: none;
+       margin-right: 40px;
+       position: relative;
+       list-style: none;
+   z-index: 2;
+   text-align: center;
+   }
+   nav ul li{
+       float:left;
+       display:inline-block;
+       background:#1b1b1b;
+       margin:0 5px ;
+       
+   }
+   nav ul li a{
+       color: white;
+       text-decoration: none;
+       line-height: 70px;
+       font-size: 18px;
+       padding: 8px 15px;
+
+   }
+   nav ul li a:hover{
+       color:  sandybrown;
+       border-radius: 5px;
+       box-shadow: 0 0 5px  sandybrown,0 0 5px  sandybrown;
+   }
+   nav ul ul li a:hover{
+       color:  sandybrown;
+       box-shadow: none;
+
+   }
+   nav ul ul{
+       position: absolute;
+       top: 90px;
+       border-top:3px solid  sandybrown;
+       opacity: 0;
+       visibility: hidden;
+       transition: top .3s;
+       
+   }
+   nav ul ul ul{
+       border-top:none;
+   }
+   nav ul li:hover >ul{
+       top: 70px;
+       opacity: 1;
+       visibility: visible;
+   }
+   nav ul ul li{
+       position: relative;
+       margin: 0px;
+       width: 150px;
+       float: none;
+       display: list-item;
+       border-bottom: 1px solid rgba(0,0,0,0.3);
+
+   }
+   nav ul ul li a{
+       line-height: 50px;
+   }
+   nav ul ul ul li{
+       position: relative;
+       top: -70px;
+       left: 150px;
+   }
+   span .fa-plus{
+       margin-left: 40px;
+       font-size: 15px;
+   }
+.upload-btn-wrapper 
+{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] 
+{
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
